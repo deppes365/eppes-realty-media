@@ -152,8 +152,8 @@ function Contact({ contactData }) {
 								</p>
 								<p>
 									Email:{' '}
-									<a href="mailto:darren.eppes@gmail.com">
-										darren.eppes@gmail.com
+									<a href="mailto:contact@eppesrealtymedia.com">
+										contact@eppesrealtymedia.com
 									</a>
 								</p>
 							</div>
