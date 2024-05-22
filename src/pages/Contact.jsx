@@ -115,7 +115,7 @@ function Contact({ contactData }) {
 						alt=""
 					/>
 				</div>
-				<div className="flex-1 flex flex-col items-center justify-center gap-2 px-8 py-4 bg-[#3b3b3b] relative">
+				<div className="min-w-[275px] md:min-w-[450px] flex-1 flex flex-col items-center justify-center gap-2 px-8 py-4 bg-[#3b3b3b] relative">
 					{sending && (
 						<div className="absolute w-full h-full z-5 bg-neutral-600/70 flex justify-center items-center">
 							<div className="flex flex-col items-center gap-2">
@@ -168,7 +168,7 @@ function Contact({ contactData }) {
 						</h1>
 						<div className="flex gap-2 justify-between">
 							<input
-								className={`border-b-4 focus-within:border-teal-400 focus-within:outline-none ${
+								className={`w-[45%] border-b-4 focus-within:border-teal-400 focus-within:outline-none ${
 									fieldError.field === 'firstName'
 										? 'border-red-500'
 										: 'border-white'
@@ -181,7 +181,7 @@ function Contact({ contactData }) {
 								onFocus={handleFocus}
 							/>
 							<input
-								className={`border-b-4 focus-within:border-teal-400 focus-within:outline-none ${
+								className={`w-[45%] border-b-4 focus-within:border-teal-400 focus-within:outline-none ${
 									fieldError.field === 'lastName'
 										? 'border-red-500'
 										: 'border-white'
