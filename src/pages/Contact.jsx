@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import emailjs from '@emailjs/browser';
@@ -21,6 +21,8 @@ function Contact({ contactData }) {
 		message: '',
 		phone: '',
 	});
+
+	useEffect(() => {}, []);
 
 	const form = useRef();
 
@@ -71,6 +73,8 @@ function Contact({ contactData }) {
 			return;
 		}
 
+		setSending(true);
+
 		emailjs
 			.sendForm(
 				`${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
@@ -80,16 +84,14 @@ function Contact({ contactData }) {
 					publicKey: `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`,
 				}
 			)
-			.then(
-				() => {
-					setMessageSent(true);
-				},
-				() => {
-					setMessageFailed(true);
-				}
-			);
-
-		setSending(false);
+			.then(() => {
+				setSending(false);
+				setMessageSent(true);
+			})
+			.catch(() => {
+				setSending(false);
+				setMessageFailed(true);
+			});
 	};
 
 	const handleFocus = () => {
@@ -101,7 +103,7 @@ function Contact({ contactData }) {
 	};
 
 	return (
-		<div className="page w-full flex flex-col items-center">
+		<div className="page relative top-[4rem] scroll-mt-[4rem] md:top-[6rem] md:scroll-mt-[6rem] w-full flex flex-col items-center">
 			<div className="w-full max-w-[1400px] px-4 flex">
 				<h1 className="text-left mt-8 mb-2 text-4xl font-semibold">
 					Contact Us
@@ -126,7 +128,7 @@ function Contact({ contactData }) {
 					)}
 
 					{messageSent && (
-						<div className="absolute w-full h-full flex flex-col justify-center items-center bg-[#3b3b3b]">
+						<div className="absolute w-full h-full flex flex-col justify-center items-center bg-[#3b3b3b] px-4">
 							<h1 className="text-white text-2xl font-semibold border-b-4 border-teal-400 mb-6">
 								Message Sent!
 							</h1>
@@ -138,7 +140,7 @@ function Contact({ contactData }) {
 					)}
 
 					{messageFailed && (
-						<div className="absolute w-full h-full flex flex-col justify-center items-center bg-[#3b3b3b]">
+						<div className="absolute w-full h-full flex flex-col justify-center items-center bg-[#3b3b3b] px-4">
 							<h1 className="text-white text-2xl font-semibold border-b-4 border-red-500 mb-6">
 								Message Failed!
 							</h1>
@@ -252,7 +254,7 @@ function Contact({ contactData }) {
 							className="text-white bg-teal-400 py-2 px-4"
 							onClick={e => {
 								e.preventDefault();
-								setSending(true);
+
 								handleSendEmail();
 							}}
 						>

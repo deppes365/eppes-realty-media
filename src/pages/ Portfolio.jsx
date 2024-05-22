@@ -30,7 +30,7 @@ function Portfolio({ portfolioData }) {
 	};
 
 	return (
-		<div className="page w-full flex justify-center pb-16">
+		<div className="page relative top-[4rem] scroll-mt-[4rem] md:top-[6rem] md:scroll-mt-[6rem] w-full flex justify-center pb-16">
 			<div className="w-full max-w-[1400px] flex flex-col px-4">
 				<h1 className="text-left mt-8 mb-10 text-4xl font-semibold ">
 					Portfolio

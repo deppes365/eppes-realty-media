@@ -57,7 +57,7 @@ function Home({ homeData, loading }) {
 	};
 
 	return (
-		<div className="page w-full flex flex-col items-center">
+		<div className="page relative top-[4rem] scroll-mt-[4rem] md:top-[6rem] md:scroll-mt-[6rem] w-full flex flex-col items-center">
 			<div className="w-full h-[50dvh] md:h-[65dvh] lg:h-[70dvh] relative">
 				{loading ? (
 					<div className="w-full h-full flex flex-col justify-center items-center bg-neutral-700">

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Services({ servicesData }) {
 	return (
-		<div className="page w-full flex justify-center">
+		<div className="page relative top-[4rem] scroll-mt-[4rem] md:top-[6rem] md:scroll-mt-[6rem] w-full flex justify-center">
 			<div className="w-full max-w-[1400px] px-4 flex flex-col">
 				<h1 className="text-left mt-8 text-4xl font-semibold">Services</h1>
 				<div className="w-full flex flex-col items-center mt-10 mb-8">
@@ -148,7 +148,7 @@ function Services({ servicesData }) {
 								return (
 									<div
 										key={`individual${i}`}
-										className="shadow-xl rounded-[15px] max-w-[225px] min-h-[100px] overflow-hidden flex flex-col"
+										className="shadow-xl rounded-[15px] max-w-[275px] min-h-[100px] overflow-hidden flex flex-col"
 									>
 										<div className="bg-[#3b3b3b] py-1 px-2">
 											<h1 className="font-semibold text-center text-white">
