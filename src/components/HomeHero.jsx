@@ -5,7 +5,7 @@ function HomeHero({ homeSlide, count, elementNum }) {
 		<div className={`absolute z-[-2] top-0 left-0 flex justify-center w-full h-full px-14 md:px-[8rem] transition-all duration-500 ${count === elementNum ? 'opacity-100' : 'opacity-0'}`}>
 			<div className="w-full max-w-[1400px] h-full flex flex-col justify-center">
             <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
-				<span className="inline-flex relative after:w-full after:h-[4px] after:absolute after:bg-teal-300 after:bottom-[-8px] left-0">
+				<span className="inline-flex relative after:w-full after:h-[4px] after:absolute after:bg-teal-300 after:bottom-[-3px] left-0">
 					{underlinedTitle || ''}
 				</span>
 				{` ${rest.join(' ')}` || ''}
