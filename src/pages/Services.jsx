@@ -62,7 +62,7 @@ function Services({ servicesData }) {
 															bundle?.services?.photos ? '' : 'text-neutral-500'
 														}`}
 													>
-														Interior/Exterior HDR Photos (Up to 25)
+														Interior/Exterior HDR Photos (Up to 40)
 													</p>
 												</div>
 												<div className="flex items-center gap-2">
