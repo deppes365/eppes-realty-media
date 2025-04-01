@@ -73,7 +73,7 @@ function Navbar() {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink
+						{/* <NavLink
 							to="/services"
 							className={({ isActive }) =>
 								isActive
@@ -82,7 +82,8 @@ function Navbar() {
 							}
 						>
 							Services
-						</NavLink>
+						</NavLink> */}
+						<a href="https://portal.spiro.media/order/eppes/order" target='_blank' rel='noreferrer'>Services</a>
 					</li>
 					<li>
 						<NavLink
